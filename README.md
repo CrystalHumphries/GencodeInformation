@@ -23,7 +23,7 @@ The gencode_attributes.txt consists of the 10th column of the Gencode_annotation
 
 To create this file, do the following:
 
-    perl -nle 'next if $_=~m/\#{2}/; @a=split(/\t/); @b=split(";",$a[8]); $f=$b[0]; $ENSG=~s/gene_id|\"//g; print join("\t",$ENSG, @b)' gencode.v19.annotation.gtf | head -50 > annotation_attributes.txt
+    perl -nle 'next if $_=~m/\#{2}/; @a=split(/\t/); @b=split(";",$a[8]); $f=$b[0]; $ENSG=~s/gene_id|\"//g; print join("\t",$ENSG, @b)' gencode.v19.annotation.gtf > annotation_attributes.txt
   
 biotype:  psuedogene, protein-coding, ncRNA, etc.
 geneName: APOE, ABCA1, GAPDH, etc.
