@@ -26,7 +26,11 @@ To create this file, do the following:
     perl -nle 'next if $_=~m/\#{2}/; @a=split(/\t/); @b=split(";",$a[8]); $f=$b[0]; $ENSG=~s/gene_id|\"//g; print join("\t",$ENSG, @b)' gencode.v19.annotation.gtf > annotation_attributes.txt
   
 biotype:  psuedogene, protein-coding, ncRNA, etc.
+
 geneName: APOE, ABCA1, GAPDH, etc.
+
 ENSG:     ENSG00000227232.4
+
 ENST:     ENST00000541675.1
+
 status:   KNOWN, NOVEL, or PUTATIVE
