@@ -18,7 +18,7 @@ my ($data_type, $GencodeRef);
 
 sub print_error{
 print<<END_OF_LINE
-cat <gencode list.txt> | perl findBiotypeInfo.pl -d \"data-type\" -g gencode.gtf
+cat <gencode list.txt> | perl findBiotypeInfo.pl -d \"data-type\" -g gencode_file
      data-type: 
            -biotype          describes the type of transcript (psuedogene, protein coding, ncRNA,etc.)
            -geneName         returns the UCSC REFSEQ gene name
@@ -65,7 +65,7 @@ sub check_files{
 
     print "Missing data type" and die unless (exists ($opts{-d}));
     $data_type=$opts{-d};
-    print_error() and die if ($data_type!~m/biotype|geneName|ENSG|ENST/);
+    print_error() and die if ($data_type!~m/biotype|geneName|ENSG|ENST|status/);
 }
 
 ## upload GencodeRef
